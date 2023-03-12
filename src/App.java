@@ -1,11 +1,11 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Carro basico = new CarroComum("Basico", TipoCombustivel.GASOLINA, 10, 55);
-        Carro esportivo = new CarroComum("Esportivo", TipoCombustivel.GASOLINA, 6, 45); 
-        Carro utilitario = new CarroComum("Utilitario", TipoCombustivel.DIESEL, 5, 55); 
-        Carro suv = new CarroComum("SUV", TipoCombustivel.FLEX, 8, 70);    
-        Carro suvFlex = new SuvFlex("SuvFlex", TipoCombustivel.FLEX, 8, 0, 65);
+        CarroComum basico = new CarroComum("Basico", TipoCombustivel.GASOLINA, 10, 55);
+        CarroComum esportivo = new CarroComum("Esportivo", TipoCombustivel.GASOLINA, 6, 45); 
+        CarroComum utilitario = new CarroComum("Utilitario", TipoCombustivel.DIESEL, 5, 55); 
+        CarroFlex suv = new CarroFlex("SUV", new TipoCombustivel[] { TipoCombustivel.GASOLINA }, new int[] { 8 }, 70);    
+        CarroFlex suvFlex = new CarroFlex("SuvFlex", new TipoCombustivel[] { TipoCombustivel.GASOLINA, TipoCombustivel.ALCOOL }, new int[] { 8, 6 }, 65);
 
 
         System.out.println("Tipos de veiculos:");

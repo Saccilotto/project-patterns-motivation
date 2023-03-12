@@ -1,18 +1,11 @@
-public class TanqueCombustivel {
+public abstract class TanqueCombustivel {
 
-    private TipoCombustivel tipoCombustivel;
-    private int capacidade;
-    private int combustivelDisponivel;
-    private TipoCombustivel tipoCorrenteCombustivel;
+    protected int capacidade;
+    protected int combustivelDisponivel;
 
-    public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade) {
-        this.tipoCombustivel = tipoCombustivel;
+    public TanqueCombustivel(int capacidade) {
         this.capacidade = capacidade;
         this.combustivelDisponivel = 0;
-    }
-
-    public TipoCombustivel getTipoCombustivel() {
-        return tipoCombustivel;
     }
 
     public int getCapacidade() {
@@ -22,30 +15,8 @@ public class TanqueCombustivel {
     public int getCombustivelDisponivel() {
         return combustivelDisponivel;
     }
-    public TipoCombustivel getTipoCombustivelCorrente(){
-        return tipoCorrenteCombustivel;
-    }
 
-    // Retorna false se o tipo de combustivel for incompativel ou se a quantidade
-    // for maior que a capacidade livre
-    public boolean abastece(TipoCombustivel tipoCombustivel, int quantidade) {
-        if (tipoCombustivel != this.tipoCombustivel) {
-            if (this.tipoCombustivel == TipoCombustivel.FLEX) {
-                if (!(tipoCombustivel == TipoCombustivel.GASOLINA || tipoCombustivel == TipoCombustivel.ALCOOL)) {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-        if (getCombustivelDisponivel() + quantidade > getCapacidade()) {
-            return false;
-        } else {
-            this.tipoCorrenteCombustivel = tipoCombustivel;
-            combustivelDisponivel += quantidade;
-            return true;
-        }
-    }
+    public abstract boolean abastece(TipoCombustivel tipoCombustivel, int quantidade);
 
     public boolean gasta(int quantidade) {
         if (getCombustivelDisponivel() - quantidade < 0) {
@@ -54,12 +25,6 @@ public class TanqueCombustivel {
             combustivelDisponivel -= quantidade;
             return true;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "TanqueCombustivel [capacidade=" + capacidade + ", combustivelDisponivel=" + combustivelDisponivel
-                + ", tipoCombustivel=" + tipoCombustivel + "]";
     }
 
 }

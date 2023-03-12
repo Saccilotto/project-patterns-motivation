@@ -1,23 +1,26 @@
+import java.util.HashMap;
+
 public class MotorFlex extends Motor {
-    int consumoGasolina;
-    int consumoAlcool;
-    public MotorFlex(TipoCombustivel tipoMotor, int consumoGasolina, int consumoAlcool) {
-        this.tipoMotor = tipoMotor;
-        this.consumoGasolina = consumoGasolina;
-        this.consumoAlcool = consumoAlcool;
+    private HashMap<TipoCombustivel, Integer> tiposEConsumos = new HashMap<>();
+
+    public MotorFlex(TipoCombustivel[] tiposCombustiveis, int[] consumos) {
+        for (int indice = 0; indice < tiposCombustiveis.length; indice++)
+            this.tiposEConsumos.put(tiposCombustiveis[indice], consumos[indice]);
     }
     
     public int getConsumoGasolina(){
-        return this.consumoGasolina;
-    };
-    public int getConsumoAlcool(){
-        return this.consumoAlcool;
+        return tiposEConsumos.get(TipoCombustivel.GASOLINA);
     }
+
+    public int getConsumoAlcool(){
+        return tiposEConsumos.get(TipoCombustivel.ALCOOL);
+    }
+
     public int combustivelNecessarioGasolina(int distancia){
-            return distancia/this.consumoGasolina;
+            return distancia / getConsumoGasolina();
     }
 
     public int combustivelNecessarioAlcool(int distancia){
-        return distancia/this.consumoAlcool;
+        return distancia / getConsumoAlcool();
     }
 }

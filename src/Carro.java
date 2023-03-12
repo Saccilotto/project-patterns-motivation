@@ -12,6 +12,8 @@ public abstract class Carro {
         return tanque.getCombustivelDisponivel();
     }
 
+    public abstract int verificaSePodeViajar(int distancia);
+
     // Retorna a quantidade efetivamente abastecida
     public int abastece(TipoCombustivel tipoCombustivel, int quantidade) {
         int capacidadeLivre = tanque.getCapacidade() - tanque.getCombustivelDisponivel();
@@ -23,7 +25,6 @@ public abstract class Carro {
             return quantidade;
         }
     }
-    public abstract int verificaSePodeViajar(int distancia);
     
     // Retorna true se conseguiu viajar
     public abstract boolean viaja(int distancia);

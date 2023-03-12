@@ -1,7 +1,9 @@
 public class MotorComum extends Motor{
-    public int consumo;
-    public MotorComum(TipoCombustivel tipoMotor, int consumo){
-        this.tipoMotor = tipoMotor;
+    private TipoCombustivel tipoCombustivel;
+    private int consumo;
+
+    public MotorComum(TipoCombustivel tipoCombustivel, int consumo){
+        this.tipoCombustivel = tipoCombustivel;
         this.consumo = consumo;
     }
     public int getConsumo() {
