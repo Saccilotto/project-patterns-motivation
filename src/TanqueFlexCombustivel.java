@@ -3,8 +3,9 @@ public class TanqueFlexCombustivel extends TanqueCombustivel {
     private TipoCombustivel[] tiposCombustiveis;
     private TipoCombustivel tipoCombustivelAtual;
 
-    public TanqueFlexCombustivel(TipoCombustivel[] tiposCombustivels, int capacidade) {
+    public TanqueFlexCombustivel(TipoCombustivel[] tiposCombustiveis, int capacidade) {
         super(capacidade);
+        this.tiposCombustiveis = tiposCombustiveis;
         this.tipoCombustivelAtual = tiposCombustiveis[0];
         this.combustivelDisponivel = 0;
     }

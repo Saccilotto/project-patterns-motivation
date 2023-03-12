@@ -6,9 +6,15 @@ public class MotorComum extends Motor{
         this.tipoCombustivel = tipoCombustivel;
         this.consumo = consumo;
     }
+
     public int getConsumo() {
         return this.consumo;
     }
+
+    public void setConsumo(int consumo) {
+        this.consumo = consumo;
+    }
+
     public int combustivelNecessario(int distancia) {
         return distancia / consumo;
     }

@@ -1,6 +1,6 @@
 public class CarroComum extends Carro {
     
-    private TanqueMonoCombustivel tanque;
+    protected TanqueMonoCombustivel tanque;
 
     public CarroComum(String modelo, TipoCombustivel tipoCombustivel, int consumoMotor, 
                         int capacidadeTanque) {
@@ -39,5 +39,10 @@ public class CarroComum extends Carro {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Carro:\n  Modelo=" + modelo + "\n  Motor=" + motor + "\n  Tanque=" + tanque;
     }
 }
