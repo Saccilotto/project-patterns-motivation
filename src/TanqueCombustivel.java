@@ -3,6 +3,7 @@ public class TanqueCombustivel {
     private TipoCombustivel tipoCombustivel;
     private int capacidade;
     private int combustivelDisponivel;
+    private TipoCombustivel tipoCorrenteCombustivel;
 
     public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade) {
         this.tipoCombustivel = tipoCombustivel;
@@ -21,6 +22,9 @@ public class TanqueCombustivel {
     public int getCombustivelDisponivel() {
         return combustivelDisponivel;
     }
+    public TipoCombustivel getTipoCombustivelCorrente(){
+        return tipoCorrenteCombustivel;
+    }
 
     // Retorna false se o tipo de combustivel for incompativel ou se a quantidade
     // for maior que a capacidade livre
@@ -37,6 +41,7 @@ public class TanqueCombustivel {
         if (getCombustivelDisponivel() + quantidade > getCapacidade()) {
             return false;
         } else {
+            this.tipoCorrenteCombustivel = tipoCombustivel;
             combustivelDisponivel += quantidade;
             return true;
         }

@@ -1,0 +1,5 @@
+# Exercício 4
+
+Para realizar o que foi solicitado no exercício 4, foram realizadas as seguintes alterações:
+1. A classe "Carro" foi recriada com classe abstrata e foram criadas as classes "CarroComum" e "SuvFlex". Essa divisão foi feita, porque há atributos e métodos que são específicos para "carros comuns" e "carros suv flex". Por exemplo, carros comuns possuem um único consumo de combustível por litro. Já carros da classe "SuvFlex" possuem comportamentos distintos, a depender do tipo de combustível que estiver no tanque.
+2. A classe "Motor", que também era uma classe "concreta", foi transformada em abstrata. Foram, então, criados dois tipos de motores: "MotorComum" e "MotorFlex". Novamente, a depender do tipo de motor, há comportamentos distintos, principalmente no que diz respeito ao consumo de combustível. 
