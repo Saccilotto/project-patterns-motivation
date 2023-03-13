@@ -23,4 +23,9 @@ public class MotorFlex extends Motor {
     public int combustivelNecessarioAlcool(int distancia){
         return distancia / getConsumoAlcool();
     }
+
+    @Override
+    public String toString() {
+        return "MotorFlex [tiposEConsumos=" + tiposEConsumos + ", quilometragem=" + quilometragem + "]";
+    }
 }

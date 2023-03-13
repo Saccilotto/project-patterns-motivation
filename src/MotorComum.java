@@ -18,4 +18,9 @@ public class MotorComum extends Motor{
     public int combustivelNecessario(int distancia) {
         return distancia / consumo;
     }
+
+    @Override
+    public String toString() {
+        return "MotorComum [consumo=" + consumo + ", quilometragem=" + quilometragem + ", tipoCombustivel=" + tipoCombustivel + "]";
+    }
 }

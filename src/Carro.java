@@ -19,10 +19,6 @@ public abstract class Carro {
         int capacidadeLivre = tanque.getCapacidade() - tanque.getCombustivelDisponivel();
         tanque.abastece(tipoCombustivel, capacidadeLivre);
            return capacidadeLivre;
-        } else {
-            tanque.abastece(tipoCombustivel, quantidade);
-            return quantidade;
-        }
     }
     
     // Retorna true se conseguiu viajar

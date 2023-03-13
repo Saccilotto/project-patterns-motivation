@@ -8,4 +8,9 @@ public abstract class Motor {
     public void percorre(int distancia) {
         quilometragem += distancia;
     }
+    
+    @Override
+    public String toString() {
+        return "Motor:\n  quilometragem=" + quilometragem;
+    }
 }

@@ -6,6 +6,7 @@ public class CarroEcono extends CarroComum {
     public CarroEcono(String modelo, TipoCombustivel tipoCombustivel, int consumoMotor, 
                     int capacidadeTanque){
         super(modelo, tipoCombustivel, consumoMotor, capacidadeTanque);
+        this.motor = new MotorComum(tipoCombustivel, consumoMotor);
         this.kilometragem = 0;
     }
 
